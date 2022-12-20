@@ -1,5 +1,5 @@
 {% set name = "featuretools_sql" %}
-{% set version = "0.0.4" %}
+{% set version = "0.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/featuretools_sql-{{ version }}.tar.gz
-  sha256: 1b3d670921e5371ae031320f55e0408689bcf8658b8d0b73714512e76520526c
+  sha256: 354e91dda4c34d852f31c312f57143538f8e5285d230af616fff390926a9d02f
 
 build:
   noarch: python
