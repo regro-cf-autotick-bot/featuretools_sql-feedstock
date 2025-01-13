@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/featuretools_sql-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/featuretools_sql-{{ version }}.tar.gz
   sha256: 354e91dda4c34d852f31c312f57143538f8e5285d230af616fff390926a9d02f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - numpy >=1.17.5
     - pandas >=1.3.0
     - featuretools >=1.5.0
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   doc_url: https://featuretools.alteryx.com/en/stable/guides/sql_database_integration.html
